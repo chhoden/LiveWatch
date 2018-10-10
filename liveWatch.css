@@ -1,0 +1,25 @@
+body{
+	background-color: #e0e1e2;
+}
+.greeting{
+	color: #dadfea;
+	text-align: center;
+	width: 100%;
+	background-color: #303133;
+	font-family: 'Marcellus SC';
+}
+
+.login-container{
+	margin: auto;
+	padding: 35px;
+	height: 60%;
+	width: 13%;
+	color:#303133;
+	line-height: 2;
+	background-color: #f9fcfc;
+}
+
+button{
+	color: #dadfea;
+	background-color: #303133;
+}
