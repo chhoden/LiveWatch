@@ -1,25 +1,57 @@
 body{
 	background-color: #e0e1e2;
-}
-.greeting{
-	color: #dadfea;
-	text-align: center;
-	width: 100%;
-	background-color: #303133;
-	font-family: 'Marcellus SC';
-}
-
-.login-container{
-	margin: auto;
-	padding: 35px;
-	height: 60%;
-	width: 13%;
-	color:#303133;
-	line-height: 2;
-	background-color: #f9fcfc;
+	height: 100%;
 }
 
 button{
 	color: #dadfea;
 	background-color: #303133;
 }
+
+.flex-container {
+	display: flex;
+	justify-content: center;
+}
+
+form{
+	width: 100%;
+}
+
+.greeting{
+	color: #dadfea;
+	text-align: center;
+	background-color: #303133;
+	font-family: 'Marcellus SC';
+	height: 70px;
+}
+
+
+input, textarea{
+	width: 90%;
+}
+
+.login-container{
+	margin: auto;
+	padding: 25px;
+	height: 100%;
+	width: 15%;
+	color:#303133;
+	line-height: 2;
+	background-color: #f9fcfc;
+}
+
+#picture{
+	height: 400px;
+	width:400px;
+	border: 1px solid gray;
+}
+
+.video-window{
+	display: flex;
+	height: 500px;
+	width: 700px;
+	margin-right: auto;
+	margin-left: auto;
+	border-style: double;
+}
+
