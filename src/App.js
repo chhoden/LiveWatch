@@ -1,61 +1,67 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom'
 import './App.css';
-import {Button} from './Button.js';
-import { DropdownButton, MenuItem} from 'react-bootstrap';
+import { LoginPage } from './containers/LoginPage';
+import { HomePage } from './containers/HomePage';
+import { ProfilePage } from './containers/ProfilePage';
+import { NavigationBar } from './components/NavigationBar';
+import { Footer } from './components/Footer';
+import { CameraHistoryPage } from './containers/CameraHistoryPage';
+
+const DashboardLayout = ({children, ...rest}) => {
+  return (
+    <div className="app">
+      <NavigationBar />
+      <div className="main">{children}</div>
+      <Footer />
+    </div>
+  );
+}
+
+const LoginLayout = ({children, ...rest}) => {
+  return (
+    <div className="app">
+      <div className="main">{children}</div>
+      <Footer/>
+    </div>
+  );
+}
+
+const DashboardRoute = ({component: Component, ...rest}) => {
+  return (
+    <Route {...rest} render={matchProps => (
+      <DashboardLayout>
+          <Component {...matchProps} />
+      </DashboardLayout>
+    )} />
+  );
+};
+
+const LoginLayoutRoute = ({component: Component, ...rest}) => {
+  return (
+    <Route {...rest} render={matchProps => (
+      <LoginLayout>
+          <Component {...matchProps} />
+      </LoginLayout>
+    )} />
+  );
+};
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {num: 0};
-  }
-
-  increment() {
-    this.setState({
-      num: this.state.num + 1
-    });
-  }
-
-  decrement() {
-    this.setState({
-      num: this.state.num - 1
-    });
-  }
-
   render() {
-    var title= "Danger";
-    var i = 0;
-
     return (
-      <div className="App">
-      <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>
-      Edit <code>src/App.js</code> and save to reload.
-      </p>
-      <div className="buttons">
-      <Button title="Increment" onClick={() => {this.increment()}}/>
-      <Button title="Decrement" onClick={() => {this.decrement()}}/>
-      <p>{this.state.num}</p>
-      </div>
-      </header>
-
-      <DropdownButton
-      bsStyle={title.toLowerCase()}
-      title={title}
-      key={i}
-      id={`dropdown-basic-${i}`}
-      >
-      <MenuItem eventKey="1">Action</MenuItem>
-      <MenuItem eventKey="2">Another action</MenuItem>
-      <MenuItem eventKey="3" active>
-      Active Item
-      </MenuItem>
-      <MenuItem divider />
-      <MenuItem eventKey="4">Separated link</MenuItem>
-      </DropdownButton>
-      </div>
-      );
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Redirect to="/home" />
+          </Route>
+          <LoginLayoutRoute path="/login" component={LoginPage} />
+          <DashboardRoute path="/home" component={HomePage} />
+          <DashboardRoute path="/profile" component={ProfilePage} />
+          <DashboardRoute path="/history" component={CameraHistoryPage} />
+        </Switch>
+      </Router>
+    );
   }
 }
 

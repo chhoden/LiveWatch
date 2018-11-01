@@ -1,0 +1,42 @@
+.profile{
+	height: 100vh;
+	width: 100vw;
+}
+
+.userProfile{
+	display: flex;
+	flex-wrap: all;
+	flex-direction: column;
+	height: inherit;
+}
+
+.profilePicture{
+	height: 300px;
+	width:500px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #D8D9DE;
+}
+
+.profilePicture img{
+	border-radius: 50%;
+}
+
+.userInfo{
+	padding: 20px 0;
+	height: 300px;
+	width:500px;
+	line-height: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #D8D9DE;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.userInfo p{
+	text-align: center;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #333333;
+
+}
+
