@@ -7,9 +7,27 @@ class HomePage extends Component {
 		this.state = {
 			data: null,
 		}
-		this.componentDidMount();
 	}
+	
 	componentDidMount() {
+		const urlParams = new URLSearchParams(window.location.search);
+
+		fetch('https://api.home.nest.com/oauth2/access_token', {
+			method: 'POST',
+			headers: {
+			'Accept': 'application/json',
+			'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+				client_id: '13bd706a-14a9-4718-b8b5-b4d881008010',
+				client_secret: '619lXCDJIcAEbedwTzLup2OJO',
+				grant_type: 'authorization_code',
+				code: urlParams.get('code'),
+			})
+		}).then(res => {
+			console.log(res);
+		})
+
 		fetch("https://query.yahooapis.com/v1/public/yql?q=select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='bothell, wa')&format=json")
 			.then(res => res.json())
 			.then(result => {
@@ -19,7 +37,7 @@ class HomePage extends Component {
 
 	render() {
 		let data = this.state.data;
-		console.log(data);
+
 		if (data) {
 			let currentCondition = data.item.condition;
 			let weeklyForecast = data.item.forecast.slice(0,7);
@@ -37,6 +55,7 @@ class HomePage extends Component {
 
 						<div className="condition">
 							<h5>{currentCondition.text}</h5>
+							<p> {this.state.code}</p>
 						</div>
 					</div>
 					<div className="weeklyForecast">
@@ -45,13 +64,18 @@ class HomePage extends Component {
 								return (
 									<div className="day">
 										<h5>{item.day}</h5>
-										<p>High {item.high}° {data.units.temperature}</p>
-										<p>Low {item.low}° {data.units.temperature}</p>
+										<p>{item.high}° {data.units.temperature} {item.low}° {data.units.temperature}</p>
+										<p>{item.text}</p>
 									</div>
 								)
 							})
 						}
 					</div>
+					{/**
+					<div className="videoFrame">
+						Video will be streamed in here!
+					</div>
+					*/}
 				</div>
 			);
 		} else {

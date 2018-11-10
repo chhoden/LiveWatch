@@ -40,6 +40,9 @@ class LoginPage extends Component {
 							<Button type="submit">Sign in</Button>
 						</Col>
 					</FormGroup>
+
+					<Button bsStyle="primary" href="https://home.nest.com/login/oauth2?client_id=13bd706a-14a9-4718-b8b5-b4d881008010&state=STATE">Login with Nest</Button>
+				
 				</Form>
 			</div>
 		);

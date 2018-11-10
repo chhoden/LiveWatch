@@ -1,61 +1,72 @@
 .weatherCard{
-    padding: 10px;
     display: flex;
     flex-direction: column;
-    height: 200px;
-    width: 350px;
+    height: 195px;
+    width: 630px;
     margin-left: auto;
     margin-right: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
 }
 
 .currentForecast{
+    color: rgb(7, 113, 121);
     display: flex;
     flex-direction: row;
     flex-wrap: all;
-    height: 100px;
+    height: 80px;
     width: inherit;
-    margin: 10px;
     justify-content: center;
 }
 
 .weeklyForecast{
+    color: rgb(40, 49, 63);
     display: flex;
     flex-direction: row;
     flex-wrap: all;
-    height: 100px;
+    height: 115px;
     width: inherit;
-    margin: 10px;
     justify-content: center;
 }
 
 .day{
     height: inherit;
-    width: 50px;
     margin: .5px;
+    padding: 5px;
     text-align: center;
-    background-color: greenyellow;
+    background-color: rgb(170, 252, 150);
 }
 
 .location{
     height: inherit;
-    width: 115px;
-    margin: .8px;
+    width: 210px;
+    margin: .5px;
+    padding: 5px;
     text-align: center;
-    background-color: mediumturquoise; 
+    background-color: rgb(199, 224, 247);
 }
 
 .temperature{
     height: inherit;
-    width: 115px;
-    margin: .8px;
+    width: 210px;
+    margin: .5px;
+    padding: 5px;
     text-align: center;
-    background-color: mediumturquoise; 
+    background-color:rgb(199, 224, 247);
 }
 
 .condition{
     height: inherit;
-    width: 115px;
-    margin: .8px;
+    width: 210px;
+    margin: .5px;
+    padding: 5px;
     text-align: center;
-    background-color: mediumturquoise; 
+    background-color: rgb(199, 224, 247);
+}
+
+.videoFrame{
+    height: 500px;
+    width:500px;
+    border: 2px solid rgb(102, 98, 98);
+    background-color: rgb(165, 224, 224);
 }
