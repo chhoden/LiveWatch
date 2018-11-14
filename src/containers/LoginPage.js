@@ -4,45 +4,21 @@ import './LoginPage.css';
 
 
 class LoginPage extends Component {
+	constructor(props) {
+		super(props);
+		sessionStorage.clear();
+	}
 
 	render() {
 		return (
 			<div className="login">
 				<Form horizontal>
+					<h1>Welcome to Live Watch</h1>
+					<br/>
 					<FormGroup controlId="formHorizontalEmail">
-						<h2 >Sign In</h2>
-						<br />
-						<Col componentClass={ControlLabel} sm={2}>
-							Email
-						</Col>
-						<Col sm={10}>
-							<FormControl type="email" placeholder="Email" />
-						</Col>
+						<h4>Please press continue to sign in with Nest</h4>
+						<Button bsStyle="primary" href="https://home.nest.com/login/oauth2?client_id=13bd706a-14a9-4718-b8b5-b4d881008010&state=STATE">Continue</Button>					
 					</FormGroup>
-
-					<FormGroup controlId="formHorizontalPassword">
-						<Col componentClass={ControlLabel} sm={2}>
-							Password
-						</Col>
-						<Col sm={10}>
-							<FormControl type="password" placeholder="Password" />
-						</Col>
-					</FormGroup>
-
-					<FormGroup>
-						<Col smOffset={2} sm={10}>
-							<Checkbox>Remember me</Checkbox>
-						</Col>
-					</FormGroup>
-
-					<FormGroup>
-						<Col smOffset={2} sm={10}>
-							<Button type="submit">Sign in</Button>
-						</Col>
-					</FormGroup>
-
-					<Button bsStyle="primary" href="https://home.nest.com/login/oauth2?client_id=13bd706a-14a9-4718-b8b5-b4d881008010&state=STATE">Login with Nest</Button>
-				
 				</Form>
 			</div>
 		);

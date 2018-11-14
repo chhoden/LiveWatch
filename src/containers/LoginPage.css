@@ -1,8 +1,22 @@
 .login{
+	background-color: rgb(247, 245, 245);
 	padding: 20px;
-	height: 500px;
-	width: 400px;
+	height: 350px;
+	width: 450px;
+	text-align: center;
+	line-height: 50px;
 	margin-left: auto;
 	margin-right: auto;
+	margin-top: 10%;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.login h1{
+	font-style: oblique;
+	color: rgb(70, 69, 69);
+}
+
+.login h4{
+	font-style: oblique;
+	color: rgb(105, 104, 104);
 }
