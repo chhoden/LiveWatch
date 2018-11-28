@@ -1,0 +1,25 @@
+.event-container{
+    width: 450px;
+    height: 300px;
+    text-align: center;
+    line-height: 5px;
+    margin-bottom: 15px;
+}
+
+.event-container span{
+    line-break: strict;
+   }
+
+.display-frame{
+    height:inherit;
+    width:inherit;
+    padding: 5px;
+}
+
+ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style-type: none;
+    justify-content: last baseline ;
+}
