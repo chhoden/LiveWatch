@@ -16,7 +16,7 @@
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 5%;
-	background-color: #D8D9DE;
+	background-color: rgb(99, 100, 104);
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -30,7 +30,7 @@
 
 .userInfo{
 	padding: 20px 0;
-	height: 300px;
+	height: 320px;
 	width:500px;
 	line-height: 30px;
 	margin-left: auto;

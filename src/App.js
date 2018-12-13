@@ -53,7 +53,7 @@ class App extends Component {
       <Router>
         <Switch>
           <Route exact path="/">
-            <Redirect to="/home" />
+            <Redirect to="/login" />
           </Route>
           <LoginLayoutRoute path="/login" component={LoginPage} />
           <DashboardRoute path="/home" component={HomePage} />

@@ -49,8 +49,12 @@ class HomePage extends Component {
 	render() {
 		let camera = this.state.camera; 
 		if(camera){
+			const hours = new Date().getHours()
+			const isDayTime = hours > 6 && hours < 20;
+			const bgClassName = isDayTime? 'day': 'night';
+
 			return(
-				<div>
+				<div className={`home ${bgClassName}`} >
 				<Weather/>
 				<div className='image-container'> 
 				<h4><b>{camera.name}</b></h4>
@@ -58,12 +62,11 @@ class HomePage extends Component {
 				</div>
 				</div>
 				);
-			} else {
-				return (<Weather/>);
-			}
+		} else {
+			return (<Weather/>);
 		}
-		
 	}
-	
-	export { HomePage };
-	
+
+}
+
+export { HomePage };

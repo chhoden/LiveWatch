@@ -42,7 +42,7 @@ class Weather extends Component {
                         {
                             weeklyForecast.map(item => {
                             return (
-                                <div className="day">
+                                <div className="w-day">
                                     <h5>{item.day}</h5>
                                     <p>{item.high}° {data.units.temperature} {item.low}° {data.units.temperature}</p>
                                     <p>{item.text}</p>

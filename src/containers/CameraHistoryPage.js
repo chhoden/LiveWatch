@@ -23,9 +23,10 @@ class CameraHistoryPage extends Component{
 		let events = this.state.data
 		if(events){
 			const listItems = events.map((event) => {
-				return <li key={event.start_time.substring(21,24)}>
+				const dateTime = new Date(event.start_time);
+				return <li key={dateTime.toISOString()}>
 					<div className='event-container'>
-						<h5><strong>Event Date: </strong> {event.start_time.substring(0,10)} <strong> Event Time: </strong> {event.start_time.substring(11,19)}</h5>
+						<h5><strong>Event Date: </strong> {dateTime.toLocaleDateString()} <strong> Event Time: </strong> {dateTime.toLocaleTimeString()}</h5>
 						<img className='display-frame' src={event.animated_image_url}/>
 					</div>
 				</li>

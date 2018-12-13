@@ -2,7 +2,7 @@
     height: 500px;
     width:630px;
     border: 2px solid rgb(102, 98, 98);
-    background-color: rgb(165, 224, 224);
+    background-color: rgb(67, 68, 68);
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -11,4 +11,18 @@
 .image-container{
     padding: 5px;
     text-align: center;
+}
+
+.day{
+    background-image: url(../images/daySky.gif);
+    background-size: cover;
+    overflow: hidden;
+    height: 715px;
+}
+
+.night{
+    background-image: url(../images/nightSky.gif);
+    background-size: cover;
+    overflow: hidden;
+    height: 715px;
 }
